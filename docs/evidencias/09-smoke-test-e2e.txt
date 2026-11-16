@@ -1,0 +1,24 @@
+# Smoke test E2E contra os containers em produção (http://localhost:3000) - 16/11/2026 08:21:11
+PASS  GET /api/health -> 200 e banco up  -> {"status":"ok","database":"up","uptime":79}
+PASS  GET / serve o frontend (index.html)
+PASS  Fallback SPA em rota do React Router
+PASS  Imagem estática servida
+PASS  Header x-powered-by oculto
+PASS  Categorias do seed  -> Bebidas, Combos, Doces, Lanches, Salgados
+PASS  Cardápio público (só disponíveis)  -> 13 produtos
+PASS  Cadastro de estudante
+PASS  Login do estudante
+PASS  Login com senha incorreta -> 401
+PASS  Rota protegida sem token -> 401
+PASS  Estudante em rota admin -> 403
+PASS  Criação de pedido com total calculado no backend  -> EL-261116-U9HJ total=17
+PASS  Login do administrador (seed)
+PASS  Admin altera status -> PREPARING
+PASS  Admin altera status -> READY
+PASS  Admin altera status -> COMPLETED
+PASS  Estudante vê o pedido finalizado
+PASS  Dashboard administrativo  -> {"total":6,"today":6,"pending":1,"preparing":3,"ready":0,"completed":2,"cancelled":0}
+PASS  CORS: origem não autorizada não recebe Access-Control-Allow-Origin
+PASS  CORS: origem autorizada recebe o header
+
+RESULTADO: 21/21 verificações aprovadas

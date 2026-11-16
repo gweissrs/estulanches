@@ -1,0 +1,51 @@
+# npm run test:integration  (executado em 16/11/2026 08:21:04, banco estulanches_test em localhost:5433)
+
+ RUN  v4.1.12 C:/Users/guilherme_wr_Silva/Documents/estu/backend
+
+Loaded Prisma config from prisma.config.ts.
+ 
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "estulanches_test", schema "public" at "localhost:5433"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+ ✓ |integration| src/tests/integration/orders.test.ts > POST /api/orders — criação de pedido > cria o pedido calculando o total no backend a partir dos preços do banco 407ms
+ ✓ |integration| src/tests/integration/orders.test.ts > POST /api/orders — criação de pedido > mantém o preço da compra mesmo após reajuste do produto 98ms
+ ✓ |integration| src/tests/integration/orders.test.ts > POST /api/orders — criação de pedido > recusa produto indisponível (409) sem gravar nada 48ms
+ ✓ |integration| src/tests/integration/orders.test.ts > POST /api/orders — criação de pedido > recusa produto inexistente e itens inválidos (400) 56ms
+ ✓ |integration| src/tests/integration/orders.test.ts > POST /api/orders — criação de pedido > exige autenticação para criar pedido (401) 19ms
+ ✓ |integration| src/tests/integration/orders.test.ts > GET /api/orders/my — pedidos do usuário > retorna apenas os pedidos do próprio estudante 123ms
+ ✓ |integration| src/tests/integration/orders.test.ts > PATCH /api/admin/orders/:id/status — atualização de status > administrador avança o pedido pelo fluxo completo 105ms
+ ✓ |integration| src/tests/integration/orders.test.ts > PATCH /api/admin/orders/:id/status — atualização de status > recusa transição inválida (400) 57ms
+ ✓ |integration| src/tests/integration/orders.test.ts > PATCH /api/admin/orders/:id/status — atualização de status > recusa status desconhecido (400) 50ms
+ ✓ |integration| src/tests/integration/orders.test.ts > PATCH /api/admin/orders/:id/status — atualização de status > estudante não pode alterar status (403), mas pode cancelar o próprio pedido pendente 65ms
+ ✓ |integration| src/tests/integration/orders.test.ts > PATCH /api/admin/orders/:id/status — atualização de status > painel administrativo reflete pedidos e faturamento 122ms
+ ✓ |integration| src/tests/integration/products.test.ts > GET /api/products — consulta do cardápio > lista apenas produtos disponíveis, com categoria e preço numérico 169ms
+ ✓ |integration| src/tests/integration/products.test.ts > GET /api/products — consulta do cardápio > filtra por categoria e pesquisa por nome 43ms
+ ✓ |integration| src/tests/integration/products.test.ts > GET /api/products — consulta do cardápio > lista categorias publicamente 25ms
+ ✓ |integration| src/tests/integration/products.test.ts > Acesso administrativo > bloqueia estudante em rota administrativa (403) 54ms
+ ✓ |integration| src/tests/integration/products.test.ts > Acesso administrativo > bloqueia rota administrativa sem token (401) 13ms
+ ✓ |integration| src/tests/integration/products.test.ts > Acesso administrativo > administrador cria, edita, desativa e exclui produto 88ms
+ ✓ |integration| src/tests/integration/products.test.ts > Acesso administrativo > valida dados do produto (400) 18ms
+ ✓ |integration| src/tests/integration/products.test.ts > Acesso administrativo > gerencia categorias e impede excluir categoria com produtos 52ms
+ ✓ |integration| src/tests/integration/auth.test.ts > POST /api/auth/register — cadastro de usuário > cadastra um estudante, salva a senha com bcrypt e devolve um token 173ms
+ ✓ |integration| src/tests/integration/auth.test.ts > POST /api/auth/register — cadastro de usuário > ignora tentativa de se cadastrar como ADMIN 19ms
+ ✓ |integration| src/tests/integration/auth.test.ts > POST /api/auth/register — cadastro de usuário > recusa e-mail já cadastrado (409) 28ms
+ ✓ |integration| src/tests/integration/auth.test.ts > Validação de dados inválidos > retorna 400 com os campos inválidos no cadastro 15ms
+ ✓ |integration| src/tests/integration/auth.test.ts > Validação de dados inválidos > retorna 400 para JSON malformado 20ms
+ ✓ |integration| src/tests/integration/auth.test.ts > POST /api/auth/login > faz login com credenciais válidas 28ms
+ ✓ |integration| src/tests/integration/auth.test.ts > POST /api/auth/login > recusa senha incorreta com 401 e mensagem genérica 26ms
+ ✓ |integration| src/tests/integration/auth.test.ts > POST /api/auth/login > recusa e-mail inexistente com a mesma mensagem (não revela contas) 19ms
+ ✓ |integration| src/tests/integration/auth.test.ts > Rotas protegidas > bloqueia acesso sem token (401) 15ms
+ ✓ |integration| src/tests/integration/auth.test.ts > Rotas protegidas > bloqueia token inválido (401) 14ms
+ ✓ |integration| src/tests/integration/auth.test.ts > Rotas protegidas > recupera a sessão com token válido 25ms
+
+ Test Files  3 passed (3)
+      Tests  30 passed (30)
+   Start at  08:20:46
+   Duration  18.26s (transform 684ms, setup 0ms, import 7.17s, tests 2.01s, environment 0ms)
+
+

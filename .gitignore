@@ -1,0 +1,28 @@
+# Dependências
+node_modules/
+
+# Builds
+dist/
+build/
+coverage/
+
+# Prisma Client gerado (recriado com `prisma generate`)
+backend/src/generated/
+
+# Variáveis de ambiente / credenciais
+.env
+.env.*
+!.env.example
+!backend/.env.test.example
+
+# Logs e temporários
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+tmp/
+
+# IDEs
+.vscode/*
+!.vscode/extensions.json
+.idea/

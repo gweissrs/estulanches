@@ -1,0 +1,40 @@
+# docker compose port app 3000
+0.0.0.0:3000
+
+# docker port estulanches-app
+3000/tcp -> 0.0.0.0:3000
+3000/tcp -> [::]:3000
+
+# netstat (porta 3000 em escuta no host)
+  TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       27980
+  TCP    [::]:3000              [::]:0                 LISTENING       27980
+  TCP    [::1]:3000             [::]:0                 LISTENING       30588
+
+# docker volume inspect estulanches_pgdata
+estulanches_pgdata driver=local mountpoint=/var/lib/docker/volumes/estulanches_pgdata/_data
+
+# docker network inspect estulanches-net (containers conectados)
+estulanches-app 172.19.0.3/16
+estulanches-db 172.19.0.2/16
+
+# docker image ls estulanches-app
+estulanches-app:1.0.0 805MB criado 28 seconds ago
+
+# usuário do processo no container
+uid=1000(node) gid=1000(node) groups=1000(node)
+
+# healthchecks
+/estulanches-app -> healthy
+/estulanches-db -> healthy
+
+# versões
+v24.22.3
+prisma               : 7.8.0
+@prisma/client       : 7.8.0
+postgres (PostgreSQL) 17.12
+
+# docker compose logs app | grep -iE 'error|erro|fatal|warn' (auditoria)
+(nenhuma ocorrência)
+
+# docker compose logs db | grep -iE 'error|fatal|panic'
+(nenhuma ocorrência)

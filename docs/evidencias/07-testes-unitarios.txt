@@ -1,0 +1,60 @@
+# npm run test:unit  (executado em 16/11/2026 08:21:04)
+
+ RUN  v4.1.12 C:/Users/guilherme_wr_Silva/Documents/estu/backend
+
+ ✓ |unit| src/tests/unit/cart.test.ts > Cálculo do total do carrinho > calcula o subtotal de um item (preço × quantidade) 2ms
+ ✓ |unit| src/tests/unit/cart.test.ts > Cálculo do total do carrinho > soma os subtotais de vários itens 0ms
+ ✓ |unit| src/tests/unit/cart.test.ts > Cálculo do total do carrinho > não sofre erros de ponto flutuante (0,10 + 0,20 = 0,30) 0ms
+ ✓ |unit| src/tests/unit/cart.test.ts > Cálculo do total do carrinho > retorna zero para carrinho vazio 0ms
+ ✓ |unit| src/tests/unit/cart.test.ts > Cálculo do total do carrinho > rejeita preços inválidos 1ms
+ ✓ |unit| src/tests/unit/cart.test.ts > Cálculo do total do carrinho > agrupa itens repetidos somando as quantidades 1ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > aceita e-mail válido: aluno@escola.com 2ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > aceita e-mail válido: maria.silva@senai.br 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > aceita e-mail válido: joao+cantina@sp.senai.br 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita e-mail inválido: '' 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita e-mail inválido: 'aluno' 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita e-mail inválido: 'aluno@' 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita e-mail inválido: '@escola.com' 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita e-mail inválido: 'aluno@escola' 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita e-mail inválido: 'aluno @escola.com' 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita e-mail inválido: 'aluno@@escola.com' 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita e-mail inválido: 'a..b@escola.com' 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > rejeita valores que não são texto 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de e-mail > normaliza e-mail (minúsculas e sem espaços) 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > aceita quantidade 1 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > aceita quantidade 5 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > aceita quantidade 20 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > rejeita quantidade 0 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > rejeita quantidade -1 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > rejeita quantidade 21 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > rejeita quantidade 1.5 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > rejeita quantidade NaN 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > rejeita quantidade 2 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Validação de quantidade de produtos > rejeita quantidade null 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Política de senha > exige ao menos 8 caracteres com letras e números 0ms
+ ✓ |unit| src/tests/unit/validators.test.ts > Política de senha > rejeita senhas acima de 72 caracteres (limite do bcrypt) 0ms
+ ✓ |unit| src/tests/unit/orderStatus.test.ts > Regras de atualização de status do pedido > segue o fluxo normal: aguardando → preparação → pronto → finalizado 2ms
+ ✓ |unit| src/tests/unit/orderStatus.test.ts > Regras de atualização de status do pedido > permite cancelar pedidos aguardando ou em preparação 0ms
+ ✓ |unit| src/tests/unit/orderStatus.test.ts > Regras de atualização de status do pedido > não permite pular etapas nem voltar etapas 0ms
+ ✓ |unit| src/tests/unit/orderStatus.test.ts > Regras de atualização de status do pedido > não altera pedidos finalizados ou cancelados 1ms
+ ✓ |unit| src/tests/unit/orderStatus.test.ts > Regras de atualização de status do pedido > estudante só cancela pedido aguardando confirmação 0ms
+ ✓ |unit| src/tests/unit/orderStatus.test.ts > Regras de atualização de status do pedido > reconhece apenas status válidos 0ms
+ ✓ |unit| src/tests/unit/orderStatus.test.ts > Número identificador do pedido > segue o formato EL-AAMMDD-XXXX 2ms
+ ✓ |unit| src/tests/unit/orderStatus.test.ts > Número identificador do pedido > gera números distintos 1ms
+ ✓ |unit| src/tests/unit/password.test.ts > Hash de senha com bcrypt > gera um hash bcrypt diferente da senha original 6ms
+ ✓ |unit| src/tests/unit/password.test.ts > Hash de senha com bcrypt > gera hashes diferentes para a mesma senha (salt aleatório) 1ms
+ ✓ |unit| src/tests/unit/password.test.ts > Comparação de senhas > retorna true para a senha correta 2ms
+ ✓ |unit| src/tests/unit/password.test.ts > Comparação de senhas > retorna false para senha incorreta 4ms
+ ✓ |unit| src/tests/unit/jwt.test.ts > Geração e validação de JWT > gera um token com três partes e o valida recuperando id e perfil 8ms
+ ✓ |unit| src/tests/unit/jwt.test.ts > Geração e validação de JWT > preserva o perfil ADMIN 1ms
+ ✓ |unit| src/tests/unit/jwt.test.ts > Geração e validação de JWT > rejeita token assinado com outro segredo 1ms
+ ✓ |unit| src/tests/unit/jwt.test.ts > Geração e validação de JWT > rejeita token adulterado 0ms
+ ✓ |unit| src/tests/unit/jwt.test.ts > Geração e validação de JWT > rejeita token expirado 1ms
+ ✓ |unit| src/tests/unit/jwt.test.ts > Geração e validação de JWT > rejeita token com perfil desconhecido 0ms
+
+ Test Files  5 passed (5)
+      Tests  49 passed (49)
+   Start at  08:20:42
+   Duration  1.15s (transform 327ms, setup 0ms, import 1.05s, tests 54ms, environment 1ms)
+
+

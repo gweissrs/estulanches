@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>RDM - EstuLanches 1.0.0</title>
+<style>
+  @page { size: A4; margin: 8mm 10mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 7.6pt;
+    line-height: 1.25;
+    color: #17211c;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .header {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #0f3d2e; color: #fff; padding: 7px 11px; border-radius: 6px;
+  }
+  .brand { display: flex; align-items: center; gap: 9px; }
+  .brand svg { width: 30px; height: 30px; }
+  .brand h1 { margin: 0; font-size: 12.5pt; letter-spacing: .2px; }
+  .brand p { margin: 1px 0 0; font-size: 7.6pt; color: #b9dcc6; }
+  .doc-id { text-align: right; font-size: 7.6pt; color: #d7eadf; }
+  .doc-id strong { display: block; font-size: 10pt; color: #fff; }
+  .status-pill {
+    display: inline-block; margin-top: 3px; padding: 2px 9px; border-radius: 99px;
+    background: #7bd389; color: #0a2a20; font-weight: 700; font-size: 7.6pt;
+  }
+  section { margin-top: 5px; border: 1px solid #dfe4e1; border-radius: 6px; overflow: hidden; }
+  section > h2 {
+    margin: 0; padding: 3px 9px; font-size: 7.9pt; text-transform: uppercase; letter-spacing: .6px;
+    background: #f1faf4; color: #0f3d2e; border-bottom: 1px solid #dfe4e1;
+  }
+  section > h2 span { color: #f08a24; margin-right: 5px; }
+  .body { padding: 4px 9px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px 12px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+  .label { font-size: 6.9pt; text-transform: uppercase; color: #6b7a72; letter-spacing: .4px; }
+  .value { font-weight: 600; }
+  p { margin: 0 0 2px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 2px 7px; border-bottom: 1px solid #eceff0; vertical-align: top; }
+  th { font-size: 6.9pt; text-transform: uppercase; letter-spacing: .4px; color: #6b7a72; background: #fafbfa; font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 7pt; background: #f5f7f5; padding: 0 3px; border-radius: 3px; }
+  .ok { color: #1f6b4a; font-weight: 700; white-space: nowrap; }
+  .ok::before { content: "\2714  "; }
+  .result { display: grid; grid-template-columns: 150px 1fr; gap: 0; }
+  .verdict {
+    background: #e3f4ea; border-right: 1px solid #dfe4e1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding: 8px; text-align: center;
+  }
+  .verdict .big { font-size: 14pt; font-weight: 800; color: #0f3d2e; letter-spacing: .5px; }
+  .verdict .box { margin-top: 3px; font-size: 7.6pt; }
+  .verdict .box b { color: #1f6b4a; }
+  .sign { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 14px; }
+  .sign div { border-top: 1px solid #6b7a72; padding-top: 2px; font-size: 7.3pt; color: #3b4842; }
+  ul { margin: 2px 0 0; padding-left: 14px; }
+  li { margin-bottom: 1px; }
+  .footer { margin-top: 4px; display: flex; justify-content: space-between; font-size: 6.8pt; color: #6b7a72; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#155239"/><path d="M14 30c0-9 8-15 18-15s18 6 18 15z" fill="#F08A24"/><rect x="12" y="33" width="40" height="6" rx="3" fill="#7BD389"/><path d="M14 42h36c0 5-4 8-9 8H23c-5 0-9-3-9-8z" fill="#F08A24"/></svg>
+    <div>
+      <h1>Ficha Simplificada de Registro de Mudança (RDM)</h1>
+      <p>EstuLanches · Sistema de Gestão de Cantina Escolar · SENAI — Técnico em Desenvolvimento de Sistemas</p>
+    </div>
+  </div>
+  <div class="doc-id">
+    Nº da mudança <strong>RDM-2026-001</strong>
+    <span class="status-pill">IMPLANTADA · APROVADA</span>
+  </div>
+</div>
+
+<section>
+  <h2><span>1</span>Identificação</h2>
+  <div class="body grid4">
+    <div><div class="label">Sistema</div><div class="value">EstuLanches</div></div>
+    <div><div class="label">Versão implantada</div><div class="value">1.0.0 (imagem <code>estulanches-app:1.0.0</code>)</div></div>
+    <div><div class="label">Data / horário</div><div class="value">16/11/2026 · 08:19:31 → 08:19:54 (UTC−3)</div></div>
+    <div><div class="label">Responsável pela implantação</div><div class="value">{{RESPONSAVEL}}</div></div>
+    <div><div class="label">Tipo de mudança</div><div class="value">Normal · implantação inicial</div></div>
+    <div><div class="label">Ambiente</div><div class="value">Produção (Docker Compose, host local)</div></div>
+    <div><div class="label">Plataforma</div><div class="value">Docker 29.1.3 · Compose v2.40.3</div></div>
+    <div><div class="label">Comando executado</div><div class="value"><code>docker compose up -d --build</code></div></div>
+  </div>
+</section>
+
+<section>
+  <h2><span>2</span>Descrição da mudança</h2>
+  <div class="body">
+    <p><b>Objetivo:</b> implantar a primeira versão do EstuLanches em containers. A versão digitaliza o cardápio, os pedidos e o acompanhamento em tempo real para estudantes, e o painel de gestão de pedidos, produtos e categorias para a cantina.</p>
+    <p><b>Arquitetura:</b> SPA React servida pelo próprio backend Express (mesma origem) + API REST em camadas (rotas → middlewares → controllers → services → Prisma) + PostgreSQL em container separado, comunicando-se pela rede interna Docker.</p>
+    <p><b>Tecnologias:</b> React 19 · Vite 7 · React Router 7 · Node.js 24.22 · Express 5 · TypeScript · Prisma ORM 7.8.0 (<code>@prisma/adapter-pg</code>) · PostgreSQL 17.12 · JWT · bcrypt · Zod · Helmet · Vitest 4 + Supertest · Docker multi-stage.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span>3</span>Parâmetros alterados</h2>
+  <table>
+    <tr><th style="width:21%">Item</th><th>Configuração aplicada</th></tr>
+    <tr><td>Docker (imagem)</td><td>Dockerfile multi-stage (frontend → backend → runtime) sobre <code>node:24-slim</code>; execução como usuário não-root <code>node</code> (uid 1000); <code>HEALTHCHECK</code> em <code>/api/health</code>; <code>init: true</code>; <code>restart: unless-stopped</code>.</td></tr>
+    <tr><td>Banco de dados</td><td><code>postgres:17-alpine</code> · usuário <code>senai</code> · banco <code>estulanches</code> · senha somente via variável de ambiente · volume persistente <code>estulanches_pgdata</code> · healthcheck <code>pg_isready</code> · migration <code>20261116105500_init</code>.</td></tr>
+    <tr><td>Rede</td><td>Bridge <code>estulanches-net</code> (app 172.19.0.3, db 172.19.0.2). Backend conecta em <code>db:5432</code> (nome do serviço, não localhost).</td></tr>
+    <tr><td>Variáveis de ambiente</td><td><code>POSTGRES_USER</code>, <code>POSTGRES_PASSWORD</code>, <code>POSTGRES_DB</code>, <code>DATABASE_URL</code>, <code>JWT_SECRET</code> (96 caracteres), <code>JWT_EXPIRES_IN=8h</code>, <code>BCRYPT_SALT_ROUNDS=10</code>, <code>CORS_ORIGINS</code>, <code>ADMIN_*</code>, <code>NODE_ENV=production</code>. Arquivo <code>.env</code> fora do Git; <code>.env.example</code> sem credenciais.</td></tr>
+    <tr><td>Portas</td><td>App: host <code>3000</code> → container <code>3000</code>. Banco: <code>5432</code> apenas na rede interna (sem publicação no host). Banco de testes: <code>127.0.0.1:5433</code> (profile <code>test</code>).</td></tr>
+    <tr><td>Execução</td><td>Entrypoint: <code>prisma migrate deploy</code> → seed idempotente → <code>node dist/server.js</code> (sem Nodemon). App só inicia após <code>db</code> healthy (<code>depends_on: service_healthy</code>).</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span>4</span>Validação</h2>
+  <table>
+    <tr><th style="width:21%">Verificação</th><th>Evidência</th><th style="width:11%">Resultado</th></tr>
+    <tr><td>Estado dos containers</td><td><code>docker compose ps</code>: <code>estulanches-app</code> Up (healthy) 0.0.0.0:3000→3000 · <code>estulanches-db</code> Up (healthy) 5432/tcp.</td><td class="ok">OK</td></tr>
+    <tr><td>Inicialização da aplicação</td><td>Migration inicial aplicada (reimplantação: “No pending migrations”), seed concluído, “EstuLanches API ouvindo na porta 3000 (production)”; <code>GET /api/health</code> → <code>{"status":"ok","database":"up"}</code>.</td><td class="ok">OK</td></tr>
+    <tr><td>Inicialização do banco</td><td>“database system is ready to accept connections”; healthcheck <code>pg_isready</code> healthy; dados preservados no volume após <code>down</code>/<code>up</code>.</td><td class="ok">OK</td></tr>
+    <tr><td>Testes unitários</td><td><code>npm run test:unit</code> (Vitest): <b>49/49 aprovados</b>, 5 arquivos, 1,15 s. E-mail, bcrypt, JWT, carrinho, quantidade, status.</td><td class="ok">49/49</td></tr>
+    <tr><td>Testes de integração</td><td><code>npm run test:integration</code> (Supertest, banco isolado <code>estulanches_test</code>): <b>30/30 aprovados</b>, 3 arquivos, 18,26 s. Cobre os 10 cenários obrigatórios.</td><td class="ok">30/30</td></tr>
+    <tr><td>Teste ponta a ponta</td><td>Smoke test contra os containers: frontend, cadastro, login, 401/403, pedido, ciclo de status, dashboard e CORS: <b>21/21 aprovados</b>.</td><td class="ok">21/21</td></tr>
+    <tr><td>Auditoria dos logs</td><td><code>docker compose logs app | grep -iE "error|fatal|warn"</code> e <code>logs db | grep -iE "error|fatal|panic"</code>: nenhuma ocorrência.</td><td class="ok">OK</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span>5</span>Resultado final</h2>
+  <div class="result">
+    <div class="verdict">
+      <div class="label">Status</div>
+      <div class="big">APROVADO</div>
+      <div class="box"><b>☒ Aprovado</b> &nbsp; ☐ Reprovado</div>
+    </div>
+    <div class="body">
+      <b>Observações</b>
+      <ul>
+        <li>Todos os critérios foram atendidos: containers saudáveis, banco persistente, 79/79 testes automatizados e 21/21 verificações E2E aprovados, logs sem erros críticos.</li>
+        <li>Testes executados no host contra o banco isolado <code>db-test</code> (tmpfs), sem tocar o banco de produção.</li>
+        <li>Imagem final: 805 MB, a maior parte (~200 MB) do Prisma CLI, necessário para o <code>migrate deploy</code>. Melhoria futura: mover as migrations para um job dedicado.</li>
+        <li>Rollback: versão anterior via <code>git checkout</code> + <code>docker compose up -d --build</code>; backup com <code>pg_dump</code>. Saídas completas em <code>docs/evidencias/</code>.</li>
+      </ul>
+      <div class="sign">
+        <div>{{RESPONSAVEL}} — Responsável pela implantação</div>
+        <div>{{VALIDADOR}} — Responsável pela validação</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <span>EstuLanches · RDM-2026-001 · versão 1.0.0</span>
+  <span>Documento gerado a partir de resultados reais de execução · Página 1 de 1</span>
+</div>
+
+</body>
+</html>

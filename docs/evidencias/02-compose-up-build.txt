@@ -1,0 +1,106 @@
+# docker compose up -d --build   (início: 16/11/2026 08:19:31)
+#1 [internal] load local bake definitions
+#1 reading from stdin 548B 0.0s done
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.85kB 0.0s done
+
+#3 DONE 0.8s
+
+#4 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+
+#5 [internal] load metadata for docker.io/library/node:24-slim
+#5 DONE 0.6s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 378B done
+
+#7 [frontend-build 1/6] FROM docker.io/library/node:24-slim@sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54
+
+#8 [internal] load build context
+#8 transferring context: 17.80kB 0.0s done
+
+#9 [frontend-build 2/6] WORKDIR /build/frontend
+
+#10 [frontend-build 3/6] COPY frontend/package.json frontend/package-lock.json ./
+
+#11 [frontend-build 4/6] RUN npm ci --no-audit --no-fund
+
+#12 [frontend-build 5/6] COPY frontend/ ./
+#12 DONE 0.1s
+
+#13 [frontend-build 6/6] RUN npm run build
+#13 0.815 
+#13 0.815 > estulanches-frontend@1.0.0 build
+#13 0.815 > vite build
+#13 0.815 
+#13 1.535 vite v7.3.8 building client environment for production...
+#13 1.676 transforming...
+#13 5.264 ✓ 1797 modules transformed.
+#13 5.487 rendering chunks...
+#13 5.498 computing gzip size...
+#13 5.518 dist/index.html                   0.96 kB │ gzip:   0.51 kB
+#13 5.518 dist/assets/index-Dgj1iTT9.css   31.05 kB │ gzip:   6.81 kB
+#13 5.518 dist/assets/index-BEZH7GvM.js   385.56 kB │ gzip: 123.85 kB
+#13 5.519 ✓ built in 3.90s
+#13 DONE 5.7s
+
+#14 [backend-build 3/6] COPY backend/package.json backend/package-lock.json ./
+
+#15 [backend-build 6/6] RUN npm run build && npm prune --omit=dev && npm cache clean --force
+
+#16 [runtime  7/11] COPY --chown=node:node --from=backend-build /build/backend/prisma ./prisma
+
+#17 [runtime  2/11] RUN apt-get update  && apt-get install -y --no-install-recommends openssl  && rm -rf /var/lib/apt/lists/*
+
+#18 [runtime  4/11] COPY --chown=node:node --from=backend-build /build/backend/package.json ./package.json
+
+#19 [runtime  5/11] COPY --chown=node:node --from=backend-build /build/backend/node_modules ./node_modules
+
+#20 [runtime  6/11] COPY --chown=node:node --from=backend-build /build/backend/dist ./dist
+
+#21 [runtime  3/11] WORKDIR /app
+
+#22 [backend-build 4/6] RUN npm ci --no-audit --no-fund
+
+#23 [backend-build 5/6] COPY backend/ ./
+
+#24 [backend-build 2/6] WORKDIR /build/backend
+
+#25 [runtime  8/11] COPY --chown=node:node --from=backend-build /build/backend/prisma.config.ts ./prisma.config.ts
+
+#26 [runtime  9/11] COPY --chown=node:node --from=frontend-build /build/frontend/dist ./public
+#26 DONE 0.1s
+
+#27 [runtime 10/11] COPY --chown=node:node docker/entrypoint.sh ./entrypoint.sh
+#27 DONE 0.1s
+
+#28 [runtime 11/11] RUN chmod 0555 ./entrypoint.sh
+#28 DONE 0.4s
+
+#29 exporting to image
+#29 exporting layers
+#29 exporting layers 0.2s done
+#29 exporting manifest sha256:455eb67a8bf36a718245bda19c21ff5e50b7b9d959ce8fd7d26636f11fb5aff2 0.0s done
+#29 exporting config sha256:460409310443eb76a03b746b38dfd3c1aa43fddddbf560eb6d1d4f47c97b8522 0.0s done
+#29 exporting attestation manifest sha256:10cc4110499f86d23f1d86694671af9f1a9c51a165560bded7c8c84647b3ef33 0.0s done
+#29 exporting manifest list sha256:42efb93a84b44521d357a30143b9ab8d4e5d88d7a00278514494a37325c220f9
+#29 exporting manifest list sha256:42efb93a84b44521d357a30143b9ab8d4e5d88d7a00278514494a37325c220f9 0.0s done
+#29 naming to docker.io/library/estulanches-app:1.0.0 done
+#29 unpacking to docker.io/library/estulanches-app:1.0.0 0.1s done
+#29 DONE 0.6s
+
+#30 resolving provenance for metadata file
+ estulanches-app:1.0.0  Built
+ Network estulanches-net  Creating
+ Network estulanches-net  Created
+ Container estulanches-db  Creating
+ Container estulanches-db  Created
+ Container estulanches-app  Creating
+ Container estulanches-app  Created
+ Container estulanches-db  Starting
+ Container estulanches-db  Started
+ Container estulanches-db  Waiting
+ Container estulanches-db  Healthy
+ Container estulanches-app  Starting
+ Container estulanches-app  Started

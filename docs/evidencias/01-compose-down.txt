@@ -1,0 +1,11 @@
+# docker compose down   (16/11/2026 08:19:29 -0300)
+ Container estulanches-app  Stopping
+ Container estulanches-app  Stopped
+ Container estulanches-app  Removing
+ Container estulanches-app  Removed
+ Container estulanches-db  Stopping
+ Container estulanches-db  Stopped
+ Container estulanches-db  Removing
+ Container estulanches-db  Removed
+ Network estulanches-net  Removing
+ Network estulanches-net  Removed

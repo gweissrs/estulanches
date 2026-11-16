@@ -1,0 +1,18 @@
+# docker compose logs app
+estulanches-app  | [entrypoint] Aplicando migrations do Prisma (prisma migrate deploy)...
+estulanches-app  | Loaded Prisma config from prisma.config.ts.
+estulanches-app  | 
+estulanches-app  | Prisma schema loaded from prisma/schema.prisma.
+estulanches-app  | Datasource "db": PostgreSQL database "estulanches", schema "public" at "db:5432"
+estulanches-app  | 
+estulanches-app  | 1 migration found in prisma/migrations
+estulanches-app  | 
+estulanches-app  | 
+estulanches-app  | No pending migrations to apply.
+estulanches-app  | [entrypoint] Executando seed idempotente...
+estulanches-app  | [seed] Produtos já existem, cardápio inicial ignorado.
+estulanches-app  | [seed] Administrador já existe.
+estulanches-app  | [seed] Concluído.
+estulanches-app  | [entrypoint] Iniciando servidor de produção...
+estulanches-app  | [db] Conexão com o PostgreSQL estabelecida.
+estulanches-app  | [app] EstuLanches API ouvindo na porta 3000 (production)

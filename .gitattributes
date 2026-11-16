@@ -1,0 +1,8 @@
+# Normaliza quebras de linha como LF no repositório
+* text=auto eol=lf
+# Scripts executados dentro do container Linux precisam obrigatoriamente de LF
+*.sh text eol=lf
+Dockerfile text eol=lf
+# Binários
+*.png binary
+*.pdf binary
