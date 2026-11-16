@@ -428,4 +428,5 @@ A versão atual é uma aplicação acadêmica pensada para **uma cantina**, sem 
 - [docs/RDM.pdf](docs/RDM.pdf) — Ficha Simplificada de Registro de Mudança
 - [docs/evidencias/](docs/evidencias/) — saídas reais dos comandos de implantação e testes
 #   e s t u l a n c h e s  
+ #   e s t u l a n c h e s  
  
